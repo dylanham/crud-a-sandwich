@@ -1,5 +1,5 @@
-class SandwichesController < ApplictionController
-  before_index :set_sandwich, only: [:show, :edit, :update, :destroy]
+class SandwichesController < ApplicationController
+  before_action :set_sandwich, only: [:show, :edit, :update, :destroy]
 
   def index
     @sandwiches = Sandwich.all
@@ -26,7 +26,7 @@ class SandwichesController < ApplictionController
   end
 
   def update
-    if @sandwich.update
+    if @sandwich.update(sandwich_params)
       flash[:notice] = "Successfully Updated"
       redirect_to @sandwich
     end
