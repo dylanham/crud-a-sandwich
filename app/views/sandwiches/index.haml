@@ -1,0 +1,9 @@
+- @sandwiches.each do |sandwich|
+  %p= sandwich.topping_one
+  %p= sandwich.topping_two
+  %p
+    = link_to 'edit', edit_sandwich_path(sandwich)
+    = link_to 'delete', sandwich_path(sandwich), method: :delete
+  %hr
+= link_to 'New Sandwich', new_sandwich_path
+  

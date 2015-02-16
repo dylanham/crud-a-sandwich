@@ -1,0 +1,9 @@
+= form_for @sandwich do |f|
+  = f.label :topping_one
+  = f.text_field :topping_one
+  .div
+    = f.label :topping_two
+    = f.text_field :topping_two
+  .div
+    = f.submit
+  = link_to 'Back', sandwiches_path
